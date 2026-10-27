@@ -1,0 +1,36 @@
+{
+ "business": {
+  "name": "Ledgerline Bookkeeping (example)",
+  "what_we_sell": "bookkeeping, payroll and year-end accounts for small UK businesses",
+  "ideal_buyer": "an owner, founder or manager of a small UK business (1 to 50 staff) asking for a bookkeeper, an accountant or help with their books, payroll, VAT or year-end, for their own business",
+  "not_a_fit": "bookkeepers or accountants advertising their own services, job seekers, recruiters filling an in-house role, students, software vendors"
+ },
+ "timezone": "Europe/London",
+ "tabs": [
+  {"name": "Hot", "means": "a business asking for bookkeeping, payroll, VAT or accounts help for itself, right now"},
+  {"name": "Prospect", "means": "a person from the people search who fits the ideal buyer (owner or finance lead at a small UK business)"},
+  {"name": "Partner", "means": "an accounting firm looking to hand work to a subcontractor or white-label bookkeeper"}
+ ],
+ "judge_notes": "A post that needs the provider on-site somewhere outside the UK goes to Excluded. A recruiter hiring an in-house bookkeeper for a client is not a lead. A people-search result is a Prospect only when their headline or company fits the ideal buyer.",
+ "rules": {
+  "reject": [
+   {"pattern": "#?\\bopen ?to ?work\\b", "why": "job seeker", "field": "any"},
+   {"pattern": "\\b(?:i am|i'm) (?:looking for|seeking) (?:a |my next )?(?:new )?(?:role|job|position|opportunit)", "why": "job seeker", "field": "text"},
+   {"pattern": "\\b(?:we offer|our services include|dm me for|book a free (?:call|consultation) with (?:me|us))\\b", "why": "selling", "field": "text"},
+   {"pattern": "(?:#hiring\\b|\\bwe're hiring\\b|\\bjoin (?:our|the) team\\b|\\bto join our\\b|\\bapply (?:now|here|via)\\b)", "why": "in-house job ad", "field": "text"}
+  ],
+  "review": [
+   {"pattern": "\\b(?:recommend|recommendations?)\\b.*\\b(?:software|app|tool)\\b", "why": "may want software, not a service", "field": "text"}
+  ],
+  "company_pages": "review",
+  "only_countries": [
+   {"name": "United Kingdom", "code": "GB", "aliases": ["UK", "U.K.", "England", "Scotland", "Wales", "Northern Ireland", "Great Britain", "London", "Manchester", "Birmingham", "Leeds", "Glasgow", "Edinburgh", "Bristol", "Liverpool", "Cardiff", "Belfast"]}
+  ],
+  "country_basis": "company",
+  "exclude_unknown": false
+ },
+ "enrich": {"enabled": true, "tabs": ["Hot", "Partner", "Review"]},
+ "budget": {"monthly_usd": 5, "per_run_usd": 0.5},
+ "schedule": "on request",
+ "sheet_id": "PASTE-THE-SHEET-ID-HERE"
+}

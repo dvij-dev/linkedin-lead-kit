@@ -1,0 +1,27 @@
+[
+ {
+  "id": "P01",
+  "type": "posts",
+  "active": true,
+  "q": "(\"looking for\" OR \"recommend\" OR \"need\") AND (bookkeeper OR \"bookkeeping\")",
+  "max_per_run": 40,
+  "why": "owners asking for a bookkeeper in their own words"
+ },
+ {
+  "id": "P02",
+  "type": "posts",
+  "active": true,
+  "q": "(\"recommend an accountant\" OR \"looking for an accountant\" OR \"need an accountant\") AND (business OR UK)",
+  "max_per_run": 30,
+  "why": "owners asking for an accountant"
+ },
+ {
+  "id": "S01",
+  "type": "people",
+  "active": false,
+  "search_query": "",
+  "filters": {"currentJobTitles": ["Owner", "Founder", "Managing Director"], "locations": ["United Kingdom"], "industryIds": ["34"]},
+  "pages_per_run": 1,
+  "why": "owners of small UK businesses in one industry (example industry id: look up real ids before use)"
+ }
+]

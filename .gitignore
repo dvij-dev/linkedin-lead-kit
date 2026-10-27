@@ -1,0 +1,5 @@
+# the client's settings, keys and lead data never go into git
+config/
+data/
+__pycache__/
+*.pyc
